@@ -1,6 +1,6 @@
-# Ftp Bulk CSV Downloader
+# SQL Bulk Inserter
 
-A console app that will download a CSV and bulk insert the data into a database.
+A generic dotnet core console app that will download a CSV from an FTP server and bulk insert the data into a database. Optimized for large datasets 
 
 ## Features
 
@@ -13,13 +13,13 @@ A console app that will download a CSV and bulk insert the data into a database.
 
 ## Notes
 
-You may want to add this data to a separate database so that the transactional logs can be configured separately to the main data store (Simple recovery mode)
+You may want to add this data to a separate database so that the transactional logs can be configured separately to the main data store (e.g. Simple recovery mode) to prevent filling up transaction logs for your primary database
 
 You can also bulk insert directly into SQL server through SQL with the following:
 
 ```
 BULK INSERT dbo.TPS_Load 
-FROM 'C:\Users\stephen.baker\TPS\tps\tps.txt'
+FROM 'C:\Users\me\data.csv'
 WITH (TABLOCK)
 ```
 
