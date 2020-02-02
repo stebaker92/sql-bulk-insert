@@ -9,7 +9,12 @@ A generic dotnet core console app that will download a CSV from an FTP server an
 - Will extract the CSV out of a zip file
 - Bulk inserts to a temp table using paging for optimal performance
 - No data loss as data goes to a temp table first
+- Logs exceptions to Slack
 
+## Configuration & Usage 
+
+- Add your SQL connection string, FTP details & Slack config to `appsettings.json`
+- Run locally using dotnet (`dotnet run`) or via Docker (`docker build -t sql-bulk-inserter . && docker run sql-bulk-inserter`)
 
 ## Notes
 
